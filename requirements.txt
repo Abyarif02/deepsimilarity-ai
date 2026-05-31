@@ -1,0 +1,12 @@
+streamlit
+nltk
+python-docx
+python-pptx
+pytesseract
+pdfplumber
+Pillow
+scikit-learn
+matplotlib
+seaborn
+pandas
+numpy
