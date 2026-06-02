@@ -734,50 +734,22 @@ def buat_docx(parafrase_dict):
 
     bio.seek(0)
 
-   return bio
+    return bio
 
 
-   def buat_pdf(parafrase_dict):
+def buat_pdf(parafrase_dict):
 
-        buffer = io.BytesIO()
+    buffer = io.BytesIO()
 
-        pdf = canvas.Canvas(buffer)
+    pdf = canvas.Canvas(buffer)
 
-        y = 800
+    y = 800
 
     pdf.drawString(
         50,
         y,
         "HASIL PARAFRASE"
     )
-
-    y -= 30
-
-    for nama, isi in parafrase_dict.items():
-
-        pdf.drawString(
-            50,
-            y,
-            nama
-        )
-
-        y -= 20
-
-        for baris in isi.split("\n"):
-
-            pdf.drawString(
-                60,
-                y,
-                baris[:100]
-            )
-
-            y -= 15
-
-            if y < 50:
-
-                pdf.showPage()
-
-                y = 800
 
     pdf.save()
 
