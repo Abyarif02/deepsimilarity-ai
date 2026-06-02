@@ -176,6 +176,9 @@ def preprocess_image_for_ocr(image):
 
     img = np.array(image)
 
+    if cv2 is None:
+        return img
+
     gray = cv2.cvtColor(
         img,
         cv2.COLOR_RGB2GRAY
@@ -731,10 +734,10 @@ def buat_docx(parafrase_dict):
 
     bio.seek(0)
 
-    return bio
+   return bio
 
 
-    def buat_pdf(parafrase_dict):
+def buat_pdf(parafrase_dict):
 
         buffer = io.BytesIO()
 
